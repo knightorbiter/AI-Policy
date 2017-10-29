@@ -1,6 +1,8 @@
 #!/bin/env python
 """
 
+MDP ITERATION POLICY
+
 COMMENTS: The original algorithm written was wrong, and had to be corrected(mentioned below). Attaching the name of the author here,
 who first wrote this, for attribution.
 Also, extra features added are breaking the loop after maximum change in utlities go below a pre-defined threshold
