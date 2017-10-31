@@ -10,4 +10,4 @@ $ python mdp.py
 Suppport for displaying all calculations involved along with the iteration table.
 Added final policy iteration computation and matrix display.
 
-Also took care of the error in the previous computation.
+Also took care of the error in the previous computations.
