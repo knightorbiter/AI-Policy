@@ -3,14 +3,14 @@
 
 MDP ITERATION POLICY
 
-COMMENTS: The original algorithm written was wrong, and had to be corrected(mentioned below). Attaching the name of the author here,
-who first wrote this, for attribution.
-Also, extra features added are breaking the loop after maximum change in utlities go below a pre-defined threshold
+COMMENTS: The original algorithm written was wrong and needed correction (mentioned below). Attaching the name of the author here 
+who first wrote this (for attribution).
+Also, extra features added are breaking the loop after maximum change in utilities go below a pre-defined threshold
 and addition of policy iteration after the termination of the algorithm.
 
 CORRECTION TO ORIGINAL VERSION:
 The original version updated the bellman states by considering the immediate updated values of the world. That is not the case with the
-value iteration algorithm. It has to consider the previous world state, in order to compute the latest one. The mistake gave wrong values
+Value Iteration Algorithm. It has to consider the previous world state in order to compute the latest one. The mistake gave wrong values
 and has since been corrected in this version.
 
 
@@ -56,7 +56,7 @@ class ValueIterator:
 
                     self.print_world(decimal_places=4)
             
-            #Before updating previous world to reflect the new world changes, we need to check for diff and if diff < delta
+            #Before updating the previous world to reflect the new world changes, we need to check for diff and if diff < delta
             #How do we do that? Trying to implement...
             list = []
             for row in range(len(self.world)):
@@ -91,7 +91,7 @@ class ValueIterator:
                 return
 
 
-            #Update previous world to the new world
+            #Update the previous world to the new world
             #print self.prev_world
             #print self.world
 
@@ -132,10 +132,10 @@ class ValueIterator:
         
         #print('e_util%s = %f' % (e_coords, e_util))
         #print('s_util%s = %f' % (s_coords, s_util))
-       # print('w_util%s = %f' % (w_coords, w_util))
-       # print('n_util%s = %f' % (n_coords, n_util))
+        #print('w_util%s = %f' % (w_coords, w_util))
+        #print('n_util%s = %f' % (n_coords, n_util))
 
-        #print 'E: '
+        # print 'E: '
         e_value = self.value_function(e_util, n_util, s_util, w_util)
         print('e_value%s = %f' % (e_coords, self.state_reward+ e_value))
         print  'S: '
@@ -181,8 +181,8 @@ class ValueIterator:
         print('own_value%s = %d' % ((r, c), self.world[r][c]))
         #print('e_util%s = %f' % (e_coords, e_util))
         #print('s_util%s = %f' % (s_coords, s_util))
-       # print('w_util%s = %f' % (w_coords, w_util))
-       # print('n_util%s = %f' % (n_coords, n_util))
+        #print('w_util%s = %f' % (w_coords, w_util))
+        #print('n_util%s = %f' % (n_coords, n_util))
 
         print 'E: '
         e_value = self.value_function(e_util, n_util, s_util, w_util)
@@ -302,7 +302,7 @@ if __name__ == '__main__':
 
     # For deterministic actions
     #Vi_deterministic = ValueIterator(world, read_only_states, prob_target=1, state_reward=-3)
-   # Vi_deterministic.iterate(50)
+    #Vi_deterministic.iterate(50)
 
     # For stochastic actions with high costs (even higher then the ditch in (0,4))
     # "This is an extreme case. I don't know why it would make sense to set a penalty for life that is
